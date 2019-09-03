@@ -251,7 +251,7 @@ table.blueTable tfoot .links a{
 /*map button*/
 
 .mapbutton{
-	color: red;
+	color: orange;
 	border-radius: 50%;
 	cursor: pointer;
 	outline: none;
