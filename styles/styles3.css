@@ -1,10 +1,5 @@
 body {
 	font-family: 'Ubuntu', sans-serif;
-	
-}
-
-header {
-	display: flex;
 }
 
 footer a {
@@ -13,21 +8,21 @@ footer a {
 	font-size: 11px;
 	float: right;
 }
+
 #header {
-	width: 50%;
+	width: 35%;
 	font-size: 70px;
+	margin-left: 10px;
 	font-family: 'Lobster', cursive;
 	margin: 20px 0 20px 10px;
 	display: flex;
-	
 }
-
 #container {
 	display: flex;
 }
 #map {
 	width: 35%;
-	height: 83vh;
+	height: 85vh;
 	margin-left: 10px;
 }
 #sub-container {
@@ -82,8 +77,6 @@ footer a {
 #mapIt {
 	margin-left: 20px;
 }
-
-#files {}
 
 p {
 	margin: 4px;
@@ -273,5 +266,15 @@ table.blueTable tfoot .links a{
 }
 #submitSingle:hover, #submit:hover, #getIt:hover {
 	background-color: orange;
+
+}
+input {
+	background-color: transparent;
+	border: none;
+	font-family: 'Ubuntu', sans-serif;
+	cursor: pointer;
+}
+
+a {
 
 }
