@@ -7,11 +7,19 @@ function mapSingle() {
 	var postal = document.getElementById("postal");
 	var country = document.getElementById("country");
 
-	const singleLocation = [address.value +", "+ city.value +", "+ state.value +", "+ postal.value +", "+ country.value];
+	const singleLocation = {
+		  street: address.value,
+          city: city.value,
+          state: state.value,
+          postalCode: postal.value,
+          country: country.value
+	};
+	console.log(singleLocation)
 
 	map.remove()
 
-	L.mapquest.geocoding().geocode(singleLocation, createMap);
+	//L.mapquest.geocoding().geocode(singleLocation, createMap);
+	  L.mapquest.geocoding().geocode(singleLocation, createMap);
 
 	function createMap(error, response) {
 	    var location = response.results[0].locations[0];
@@ -62,6 +70,7 @@ function mapSingle() {
 	L.mapquest.geocoding().geocode(singleLocation, geoCodingCallback);
 
 	function geoCodingCallback(error, response) {
+		console.log(response)
 		  document.getElementById("inpLat").textContent = response.results[0].locations[0].displayLatLng.lat;
 		  document.getElementById("inpLng").textContent = response.results[0].locations[0].displayLatLng.lng;
 		};

@@ -66,11 +66,13 @@ function readBlob() {
 	    			function mapeame(evt) {
 	    				var latitude;
 	    				var longitude;
-	    				var inputToMap = evt.target.parentElement.parentElement.childNodes[1].childNodes[0].value+","+
-	    									 evt.target.parentElement.parentElement.childNodes[2].childNodes[0].value+","+
-	    									 evt.target.parentElement.parentElement.childNodes[3].childNodes[0].value+","+
-	    									 evt.target.parentElement.parentElement.childNodes[4].childNodes[0].value+","+
-	    									 evt.target.parentElement.parentElement.childNodes[5].childNodes[0].value;
+	    				var inputToMap = {
+	    					street: evt.target.parentElement.parentElement.childNodes[1].childNodes[0].value,
+	    					city: evt.target.parentElement.parentElement.childNodes[2].childNodes[0].value,
+	    					state: evt.target.parentElement.parentElement.childNodes[3].childNodes[0].value,
+	    					postal: evt.target.parentElement.parentElement.childNodes[4].childNodes[0].value,
+	    					country: evt.target.parentElement.parentElement.childNodes[5].childNodes[0].value
+	    				};
 	    				if(evt.target.parentElement.nextElementSibling == null) {
 	    					latitude = document.createElement("td");
 	    					evt.target.parentElement.parentElement.appendChild(latitude);
