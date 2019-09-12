@@ -59,6 +59,8 @@ function readBlobRev() {
 	    			goMapRev.onclick = mapeameRev;
 
 	    			function mapeameRev(evt) {
+	    				var inputAddress, inputCity, inputState, inputPostal, inputCountry;
+	    				var inputToMapRev = [evt.target.parentElement.parentElement.childNodes[1].childNodes[0].value,evt.target.parentElement.parentElement.childNodes[2].childNodes[0].value];
 	    				if(evt.target.parentElement.nextElementSibling == null) {
 	    					var addressRev = document.createElement("td");
 	    					evt.target.parentElement.parentElement.appendChild(addressRev);
@@ -71,33 +73,83 @@ function readBlobRev() {
 	    					var countryRev = document.createElement("td");
 	    					evt.target.parentElement.parentElement.appendChild(countryRev);
 	    					
-	    					var reverseMap = revToMap[evt.target.id.split('')[evt.target.id.split('').length-1]-1];
+	    					//var reverseMap = revToMap[evt.target.id.split('')[evt.target.id.split('').length-1]-1];
 
-	    					L.mapquest.geocoding().reverse(reverseMap);
-	       					L.mapquest.geocoding().reverse(reverseMap, geocodingCallback);
+	    					L.mapquest.geocoding().reverse(inputToMapRev);
+	       					L.mapquest.geocoding().reverse(inputToMapRev, geocodingCallback);
 
 	    					function geocodingCallback(error, result) {
-	    						addressRev.textContent = result.results[0].locations[0].street
-	    						cityRev.textContent = result.results[0].locations[0].adminArea5;
-	    						stateRev.textContent = result.results[0].locations[0].adminArea3;
-	    						postalRev.textContent = result.results[0].locations[0].postalCode.split(",")[0];
-	    						countryRev.textContent = result.results[0].locations[0].adminArea1;
-	       						}
-
-	       				
-	    				} else {   					
-	    					//L.mapquest.geocoding().reverse(revToMap[evt.target.id.split('')[evt.target.id.split('').length-1]-1])
+	    						if (result.results[0].locations[0].street != "") {
+	    							addressRev.textContent = result.results[0].locations[0].street;
+	    						} else {
+	    							addressRev.textContent = " ";
+	    						}
+	    						if (result.results[0].locations[0].adminArea5 != "") {
+	    							cityRev.textContent = result.results[0].locations[0].adminArea5;
+	    						} else {
+	    							cityRev.textContent = " ";
+	    						}
+	    						if (result.results[0].locations[0].adminArea3 != "") {
+	    							stateRev.textContent = result.results[0].locations[0].adminArea3;
+	    						} else {
+	    							stateRev.textContent = " ";
+	    						}
+	    						if (result.results[0].locations[0].postalCode != "") {
+	    							postalRev.textContent = result.results[0].locations[0].postalCode.split(",")[0];
+	    						} else {
+	    							postalRev.textContent = " ";
+	    						}
+	    						if (result.results[0].locations[0].adminArea1 != "") {
+	    							countryRev.textContent = result.results[0].locations[0].adminArea1;
+	    						} else {
+	    							countryRev.textContent = " ";
+	    						}
+	       						}	       				
+	    					} else {   					
+		    					L.mapquest.geocoding().reverse(inputToMapRev)
+		    					L.mapquest.geocoding().reverse(inputToMapRev, geocodingCallback2);
+		    					function geocodingCallback2(error, result) {
+		    						if (result.results[0].locations[0].street != "") {
+		    							evt.target.parentElement.parentElement.childNodes[4].textContent = result.results[0].locations[0].street;
+		    						} else {
+		    							evt.target.parentElement.parentElement.childNodes[4].textContent = " ";
+		    						}
+		    						if (result.results[0].locations[0].adminArea5 != "") {
+		    							evt.target.parentElement.parentElement.childNodes[5].textContent = result.results[0].locations[0].adminArea5;
+		    						} else {
+		    							evt.target.parentElement.parentElement.childNodes[5].textContent = " ";
+		    						}
+		    						if (result.results[0].locations[0].adminArea3 != "") {
+		    							evt.target.parentElement.parentElement.childNodes[6].textContent = result.results[0].locations[0].adminArea3;
+		    						} else {
+		    							evt.target.parentElement.parentElement.childNodes[6].textContent = " ";
+		    						}
+		    						if (result.results[0].locations[0].postalCode != "") {
+		    							evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[0].postalCode.split(",")[0];
+		    						} else {
+		    							evt.target.parentElement.parentElement.childNodes[7].textContent = " ";
+		    						}
+		    						if (result.results[0].locations[0].adminArea1 != "") {
+		    							evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[0].adminArea1;
+		    						} else {
+		    							evt.target.parentElement.parentElement.childNodes[8].textContent = " ";
+		    						}
+	    						}
 	    				}
 	    			};
 	    	};
 	    var splitRev = refPtsRev[i].split(",");
 	    for (var j=0; j < splitRev.length; j++) {
 	    	var cellRev = document.createElement("td");
+	    	var inputCellRev = document.createElement("input");
+	    	inputCellRev.setAttribute("type", "text");
+	    	inputCellRev.setAttribute("id", "input"+(j+1)+rowRev.id);
 	    	rowRev.appendChild(cellRev);
 	    	rowRev.appendChild(cellgoMapRev);
 	    	rowRev.appendChild(goMapRev);
+	    	cellRev.appendChild(inputCellRev);
 	    	cellgoMapRev.appendChild(goMapRev)
-	    	cellRev.textContent = splitRev[j];
+	    	inputCellRev.value = splitRev[j];
 	    	};	        
 		};
 

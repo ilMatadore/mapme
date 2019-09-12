@@ -51,33 +51,45 @@ function readBlob() {
 	    			var trHead = document.getElementById("trHead")
 	    			var row = document.createElement("tr");
 	    			row.setAttribute("id","row"+(i+1));
-	    			row.setAttribute("title", refPts[i].split(",").slice(1).join());
-	    			var cellgoMap = document.createElement("td");	    					
+	    			var cellgoMap = document.createElement("td"); 
+	    			cellgoMap.textContent = ""; 					
 //creates map icon button
 	    			var goMap = document.createElement("button");
 	     			goMap.classList.add("fa");
 	    			goMap.classList.add("fa-map-marker");
 	    			goMap.classList.add("mapbutton");
 	    			goMap.setAttribute("id","mapa"+(i+1));
-	    			table.appendChild(row);	   			
+	    			table.appendChild(row);	   		
 
 	    			goMap.onclick = mapeame;
 //map each location function
 	    			function mapeame(evt) {
+	    				var latitude;
+	    				var longitude;
+	    				var inputToMap = evt.target.parentElement.parentElement.childNodes[1].childNodes[0].value+","+
+	    									 evt.target.parentElement.parentElement.childNodes[2].childNodes[0].value+","+
+	    									 evt.target.parentElement.parentElement.childNodes[3].childNodes[0].value+","+
+	    									 evt.target.parentElement.parentElement.childNodes[4].childNodes[0].value+","+
+	    									 evt.target.parentElement.parentElement.childNodes[5].childNodes[0].value;
 	    				if(evt.target.parentElement.nextElementSibling == null) {
-	    					var latitude = document.createElement("td");
+	    					latitude = document.createElement("td");
 	    					evt.target.parentElement.parentElement.appendChild(latitude);
-	    					var longitude = document.createElement("td");
+	    					longitude = document.createElement("td");
 	    					evt.target.parentElement.parentElement.appendChild(longitude);
-	    					L.mapquest.geocoding().geocode(evt.target.parentElement.parentElement.title);
-	    					console.log("mapped")
-	    					L.mapquest.geocoding().geocode(evt.target.parentElement.parentElement.title, geocodingCallback)
+	    					L.mapquest.geocoding().geocode(inputToMap);
+	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback)
 	    					function geocodingCallback(error, result) {
 	    						latitude.textContent = result.results[0].locations[0].displayLatLng.lat
 	    						longitude.textContent = result.results[0].locations[0].displayLatLng.lng;
 	    						}
 	    				} else {
-	    					//L.mapquest.geocoding().geocode(evt.target.parentElement.parentElement.title);
+	    					L.mapquest.geocoding().geocode(inputToMap);
+	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback);
+	    					function geocodingCallback(error, result) {
+	    						evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[0].displayLatLng.lat
+	    						evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[0].displayLatLng.lng;
+	    						};
+	    			
 	    				};
 	    			};
 	    };
@@ -85,13 +97,61 @@ function readBlob() {
 	    var split = refPts[i].split(",");
 	    for (var j=0; j < split.length; j++) {
 	    	var cell = document.createElement("td");
+	    	cell.setAttribute("id",row.id+"td"+(j+1));
+	    	var inputCell = document.createElement("input");
+	    	inputCell.setAttribute("type", "text");
+	    	inputCell.setAttribute("id", "input"+(j+1)+row.id);
 	    	row.appendChild(cell);
 	    	row.appendChild(cellgoMap);
 	    	row.appendChild(goMap);
+	    	cell.appendChild(inputCell)
 	    	cellgoMap.appendChild(goMap)
-	    	cell.textContent = split[j];
-	    };	        
+	    	inputCell.value = split[j];
+	    };	
+
+
+
 	};
+	//setting input fields size and max length in ML table
+	    var nameLength = [], addressLength = [], cityLength = [], stateLength = [], postalLength = [], countryLength = [];
+	    for (var a = 1; a <= tbody.childElementCount; a++) {
+	    	nameLength.push(document.getElementById("input1"+"row"+a));
+	    	addressLength.push(document.getElementById("input2"+"row"+a));
+	    	cityLength.push(document.getElementById("input3"+"row"+a));
+	    	stateLength.push(document.getElementById("input4"+"row"+a));
+	    	postalLength.push(document.getElementById("input5"+"row"+a));
+	    	countryLength.push(document.getElementById("input6"+"row"+a));
+	    	for (var b=0; b<nameLength.length; b++) {
+	    		nameLength[b].size = "28";
+	    		nameLength[b].maxLength = "100";	    		
+	    	}
+	    	for (var b=0; b<addressLength.length; b++) {
+	    		addressLength[b].size = "45";
+	    		addressLength[b].maxLength = "50";	    		
+	    	}
+	    	for (var b=0; b<cityLength.length; b++) {
+	    		cityLength[b].size = "20";
+	    		cityLength[b].maxLength = "20";	    		
+	    	}
+	    	for (var b=0; b<stateLength.length; b++) {
+	    		stateLength[b].size = "2";
+	    		stateLength[b].maxLength = "15";	    		
+	    	}
+	    	for (var b=0; b<postalLength.length; b++) {
+	    		postalLength[b].size = "5";
+	    		postalLength[b].maxLength = "10";	    		
+	    	}
+	    	for (var b=0; b<countryLength.length; b++) {
+	    		countryLength[b].size = "2";
+	    		countryLength[b].maxLength = "2";
+	    		console.log(countryLength[b].maxLength);	    		
+	    	}	    	
+	    	
+	
+	    }
+
+
+
 //function map all locations
 		function mapAll() {
 			for (var l = 1; l <= tbody.childElementCount; l++) {

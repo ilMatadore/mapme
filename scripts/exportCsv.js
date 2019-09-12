@@ -33,17 +33,34 @@ function exportTableToCSV(filename,clicked_id) {
         var rows = document.getElementById("tableRev");
     }
     var rows2= rows.querySelectorAll("tr");
+    var rows3= rows.querySelectorAll("input");
 
     for (var i = 0; i < rows2.length; i++) {
-        var row = [], cols = rows2[i].querySelectorAll("td, th");
-        
-        for (var j = 0; j < cols.length; j++) 
-            row.push(cols[j].innerText);
-        
+        var row = []
+        var cols = rows2[i].querySelectorAll("th");
+        var cols2 = rows2[i].querySelectorAll("td");
+        var cols3 = rows2[i].querySelectorAll("input");
+
+        for (var j = 0; j < cols.length; j++) {
+            if (cols[j].innerText !== "") {
+               row.push(cols[j].innerText);
+        }
+        }
+
+        for (var z = 0; z < cols3.length; z++) 
+           row.push(cols3[z].value);
+            
+        for (var x = 0; x < cols2.length; x++) {
+            if (cols2[x].textContent !== "") {
+                row.push(cols2[x].textContent);
+            }
+        }
+
+
         csv.push(row.join(","));        
     }
 
     // Download CSV file
-    downloadCSV(csv.join("\n"), filename);
+   downloadCSV(csv.join("\n"), filename);
 }
 

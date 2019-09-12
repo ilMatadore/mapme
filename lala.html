@@ -2,7 +2,7 @@
 <html>
 	<head>
     	<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
-    	<link type="text/css" rel="stylesheet" href="./styles3.css"/>
+    	<link type="text/css" rel="stylesheet" href="./styles/styles3.css"/>
     	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     	<link href="https://fonts.googleapis.com/css?family=Lobster|Ubuntu&display=swap" rel="stylesheet">
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,10 +16,10 @@
 			<div id="map"></div>
 			<div id="sub-container">
 				<div id="tabs">
-							<button id="singleLoc">Single Address</button>
-							<button id="multipleLoc">Multiple Addresses</button>
-							<button id="reverseGeoLoc">Single Lat/Long</button>
-							<button id="multipleReverse">Multiple Lat/Long</button>
+							<button id="singleLoc">Single Location</button>
+							<button id="multipleLoc">Multiple locations</button>
+							<button id="reverseGeoLoc">Single Reverse</button>
+							<button id="multipleReverse">Multiple Reverse</button>
 				</div>
 				<div id="form" class="form-style-7">
 					<ul id="list">
@@ -320,13 +320,19 @@
 									<th style="width:5%">State</th>
 									<th style="width:7.5%">Postal</th>
 									<th style="width:5%">Country</th>
-									<th></th>
+									<th>  </th>
 									<th style="width:7.5%">Latitude</th>
 									<th style="width:7.5%">Longitude</th>
 								</tr>
 							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="9">
+										<div class="links" id="links"></div>
+									</td>
+								</tr>
+							</tfoot>
 							<tbody id="tbody"></tbody>
-							<tfoot></tfoot>
 						</table>
 					</div>
 					<div id="byte_content" style="margin-top: 20px; margin-left: 20px;"></div>
@@ -356,7 +362,6 @@
 						<table id="tableRev" class="blueTable">
 							<thead>
 								<tr id="trHeadRev">
-									<th style="width:10%">Name</th>
 									<th style="width:10%">Latitude</th>
 									<th style="width:10%">Longitude</th>
 									<th style="width:2%"></th>
@@ -367,20 +372,26 @@
 									<th style="width:5%">Country</th>
 								</tr>
 							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="8">
+										<div class="links" id="links"></div>
+									</td>
+								</tr>
+							</tfoot>
 							<tbody id="tbodyRev"></tbody>
-							<tfoot></tfoot>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 		<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-		<script type="text/javascript" src="./script1.js"></script>
-		<script type="text/javascript" src="./scriptSL.js"></script>		
-		<script type="text/javascript" src="./scriptML.js"></script>
-		<script type="text/javascript" src="./scriptRevSingle.js"></script>
-		<script type="text/javascript" src="./scriptGetRev.js"></script>
-		<script type="text/javascript" src="./exportCsv.js"></script>
+		<script type="text/javascript" src="./scripts/script1.js"></script>
+		<script type="text/javascript" src="./scripts//scriptSL.js"></script>		
+		<script type="text/javascript" src="./scripts//scriptML.js"></script>
+		<script type="text/javascript" src="./scripts//scriptRevSingle.js"></script>
+		<script type="text/javascript" src="./scripts//scriptGetRev.js"></script>
+		<script type="text/javascript" src="./scripts//exportCsv.js"></script>
 	</body>
 	<footer>
 		<a href="mailto:restarter.dev@gmail.com?subject=Map It Feedback">Feedback</a>

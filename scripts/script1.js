@@ -69,7 +69,7 @@ center: [32.777977,-96.796215],
 	layers: L.mapquest.tileLayer('map'),
 	zoom: 12
 });
-/*
+
 L.control.layers({
   'Map': baseLayer,
   'Hybrid': L.mapquest.tileLayer('hybrid'),
@@ -77,4 +77,3 @@ L.control.layers({
   'Light': L.mapquest.tileLayer('light'),
   'Dark': L.mapquest.tileLayer('dark')
 }).addTo(map);
-*/

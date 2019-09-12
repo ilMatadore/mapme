@@ -19,7 +19,7 @@ function mapSingle() {
 	    map = L.mapquest.map('map', {
 	        center: latLng,
 	        layers: L.mapquest.tileLayer('map'),
-	        zoom: 15
+	        zoom: 10
 	    });
 
 		var customIcon = L.mapquest.icons.marker({
