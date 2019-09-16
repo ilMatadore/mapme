@@ -52,8 +52,8 @@ function readBlobRev() {
 	    			var cellgoMapRev = document.createElement("td");
 	    			var goMapRev = document.createElement("button");
 	    			goMapRev.setAttribute("id","mapaRev"+(i+1));
-	    			goMapRev.classList.add("fa");
-	    			goMapRev.classList.add("fa-map-marker");
+	    			goMapRev.classList.add("fas");
+	    			goMapRev.classList.add("fa-map-marker-alt");
 	    			goMapRev.classList.add("mapbutton");
 	    			tableRev.appendChild(rowRev);
 	    			goMapRev.onclick = mapeameRev;

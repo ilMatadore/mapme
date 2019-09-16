@@ -55,8 +55,8 @@ function readBlob() {
 	    			cellgoMap.textContent = ""; 					
 //creates map icon button
 	    			var goMap = document.createElement("button");
-	     			goMap.classList.add("fa");
-	    			goMap.classList.add("fa-map-marker");
+	     			goMap.classList.add("fas");
+	    			goMap.classList.add("fa-map-marker-alt");
 	    			goMap.classList.add("mapbutton");
 	    			goMap.setAttribute("id","mapa"+(i+1));
 	    			table.appendChild(row);	   		
@@ -81,6 +81,7 @@ function readBlob() {
 	    					L.mapquest.geocoding().geocode(inputToMap);
 	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback)
 	    					function geocodingCallback(error, result) {
+	    						console.log(result)
 	    						latitude.textContent = result.results[0].locations[0].displayLatLng.lat
 	    						longitude.textContent = result.results[0].locations[0].displayLatLng.lng;
 	    						}
@@ -88,6 +89,7 @@ function readBlob() {
 	    					L.mapquest.geocoding().geocode(inputToMap);
 	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback);
 	    					function geocodingCallback(error, result) {
+	    						console.log(result)
 	    						evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[0].displayLatLng.lat
 	    						evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[0].displayLatLng.lng;
 	    						};
@@ -145,8 +147,7 @@ function readBlob() {
 	    	}
 	    	for (var b=0; b<countryLength.length; b++) {
 	    		countryLength[b].size = "2";
-	    		countryLength[b].maxLength = "2";
-	    		console.log(countryLength[b].maxLength);	    		
+	    		countryLength[b].maxLength = "2";	    		
 	    	}	    	
 	    	
 	

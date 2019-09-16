@@ -18,8 +18,7 @@ function mapSingle() {
 
 	map.remove()
 
-	//L.mapquest.geocoding().geocode(singleLocation, createMap);
-	  L.mapquest.geocoding().geocode(singleLocation, createMap);
+	L.mapquest.geocoding().geocode(singleLocation, createMap);
 
 	function createMap(error, response) {
 	    var location = response.results[0].locations[0];
@@ -29,7 +28,7 @@ function mapSingle() {
 	        layers: L.mapquest.tileLayer('map'),
 	        zoom: 10
 	    });
-
+	    console.log(map)
 		var customIcon = L.mapquest.icons.marker({
 	        primaryColor: '#FF9531'
 	    });

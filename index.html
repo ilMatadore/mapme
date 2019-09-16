@@ -5,12 +5,11 @@
     	<link type="text/css" rel="stylesheet" href="./styles/styles3.css"/>
     	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     	<link href="https://fonts.googleapis.com/css?family=Lobster|Ubuntu&display=swap" rel="stylesheet">
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     	<title>Map It</title>
 	</head>
 	<body>
 		<header>
-			<h1 id="header">Map It<i class="fa fa-map-marker" style="color:orange; font-size: 80px;"></i></h1>
+			<h1 id="header">Map It<i class="fas fa-map-marker-alt" style="color:orange; font-size: 80px;"></i></h1>
 		</header>
 		<div id="container">
 			<div id="map"></div>
@@ -20,6 +19,7 @@
 							<button id="multipleLoc">Multiple Addresses</button>
 							<button id="reverseGeoLoc">Single Lat/Long</button>
 							<button id="multipleReverse">Multiple Lat/Long</button>
+							<button id="help"><i class='fas fa-question-circle'></i></button>
 				</div>
 				<div id="form" class="form-style-7">
 					<ul id="list">
@@ -300,7 +300,7 @@
 						    <span>Select Country</span>
 						</li>
 						<li>
-						    <button id="submitSingle" >Map It <i class="fa fa-map-marker"></i></button>
+						    <button id="submitSingle" >Map It <i class="fas fa-map-marker-alt"></i></button>
 						</li>
 					</ul>
 				</div>
@@ -343,7 +343,7 @@
 						<span>Enter longitude in decimal format</span>
 					</li>
 					<li>
-						<button id="getIt">Get Address <i class="fa fa-map-marker"></i></button>
+						<button id="getIt">Get Address <i class="fas fa-map-marker-alt"></i></button>
 					</li>
 				</div>
 				<div id="multiRevTab" style="display: none; margin-left: 20px;">
@@ -374,7 +374,66 @@
 				</div>
 			</div>
 		</div>
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <span class="close">&times;</span>
+		      <h2>Help</h2>
+		    </div>
+		    <div class="modal-body">
+		      <h4>Single Address</h4>
+		      	<p>Enter location's data you would like to map, such as address, city, postal code, state and/or select the country.
+				 A pin will be dropped in the map and latittude and longitude will be returned for the location entered.</p>
+
+			  <h4>Multiple Addresses</h4>
+			  	<p>Multiple locations can be loaded, click on Choose file and select the file with the locations, file must be:</p>
+			  	<ul>
+			  		<li>File must be a csv (comma delimited).</li>
+			  		<li>File Must contain the following six columns:</li>
+			  			<ul>
+				  			<li>Name</li>
+				  			<li>Address</li>
+				  			<li>City</li>
+				  			<li>State/Province</li>
+				  			<li>Postal Code</li>
+				  			<li>Country</li>
+				  		</ul>
+			  		<li>File must not contain headers.</li>
+			  	</ul>
+			  	<p>Once the file is loaded, a table will be created, click on each <i class="fas fa-map-marker-alt" style="color: orange;"></i> for mapping a specific location or click on 'Map'em All' button for all locations.</p>
+			  	<p>Each loaded cell can be manually updated in the table and re-mapped by clicking the <i class="fas fa-map-marker-alt" style="color: orange;"></i> again, a new latitude and longitude will be returned.</p>
+			  	<p>Data can be exported as a csv file by clicking the 'Export data' button.</p>
+
+			  <h4>Single Lat/Long</h4>
+			  	<p>Enter Latitude and Longitude in decimals and click on 'Get Address", the best address for that location will be returned and a pin will be placed in the map. Pin can be dragged and placed in a new location, click on 'Get Address' again and the new address will be returned.</p>
+
+			  <h4>Multiple Lat/Long</h4>
+			  	<p>Multiple Lat/longs can be loaded, click on Choose file and select the file with the locations, file must be:</p>
+			  	<ul>
+			  		<li>File must be a csv (comma delimited).</li>
+			  		<li>File Must contain the following three columns:</li>
+			  			<ul>
+				  			<li>Name</li>
+				  			<li>Latitude</li>
+				  			<li>Longitude</li>
+				  		</ul>
+			  		<li>File must not contain headers.</li>
+			  	</ul>
+			  	<p>Once the file is loaded, a table will be created, click on each <i class="fas fa-map-marker-alt" style="color: orange;"></i> for mapping a specific location or click on 'Map'em All' button for all locations.</p>
+			  	<p>Each loaded cell can be manually updated in the table and re-mapped by clicking the <i class="fas fa-map-marker-alt" style="color: orange;"></i> again, a new latitude and longitude will be returned.</p>
+			  	<p>Data can be exported as a csv file by clicking the 'Export data' button.</p>
+		    </div>
+		    <div class="modal-footer">
+		      <h3> </h3>
+		    </div>
+		  </div>
+
+		</div>
 		<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 		<script type="text/javascript" src="./scripts/script1.js"></script>
 		<script type="text/javascript" src="./scripts/scriptSL.js"></script>		
 		<script type="text/javascript" src="./scripts/scriptML.js"></script>
