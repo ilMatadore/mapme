@@ -282,11 +282,11 @@ table.blueTable tfoot .links a{
 	transition: 0.5s;
 	
 }
-#submitSingle:hover, #submit:hover, #getIt:hover, #export:hover, #mapIt:hover {
+#submitSingle:hover, #submit:hover, #getIt:hover, #export:hover, #mapIt:hover, #submitRev:hover, #exportRev:hover, #mapItRev:hover {
 	background-color: orange;
 }
 
-#files, #submit, #export, #mapIt {
+#files, #submit, #export, #mapIt, #submitRev, #exportRev, #mapItRev {
 	font-family: Ubuntu;
 	transition: 0.5s;
 	outline: none;
