@@ -86,10 +86,10 @@ footer a {
 }
 
 #loadOptions, #loadOptionsRev {
-	margin: 30px auto;
+	margin: 30px 200px;
 	display: flex;
   	justify-content: space-around;
-  	width: 80%;
+  	width: 60%;
 }
 
 #mapIt {
@@ -291,6 +291,7 @@ table.blueTable tfoot .links a{
 	transition: 0.5s;
 	outline: none;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 input {
@@ -298,6 +299,22 @@ input {
 	border: none;
 	font-family: 'Ubuntu', sans-serif;
 	cursor: pointer;
+}
+
+#resetMap {
+	float: right;
+	margin-left: 20px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 32px;
+	color: darkblue;
+	transition: 0.3s;
+	outline: none;
+}
+
+#resetMap:hover {
+	color: orange;
 }
 
 /* The Modal (background) */

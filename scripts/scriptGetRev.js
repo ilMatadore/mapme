@@ -162,9 +162,13 @@ function readBlobRev() {
 		var loadOptsRev = document.getElementById("loadOptionsRev");
 		if (loadOptsRev.childNodes.length < 8) {
 		var mapItRev = document.createElement("button");
-		mapItRev.textContent = "Map'em All";
+		var iconMapItRev = document.createElement("i")
+		iconMapItRev.classList.add("fas");
+	    iconMapItRev.classList.add("fa-map-marker-alt");
+		mapItRev.textContent = "Map All ";
 		mapItRev.setAttribute("id","mapItRev");
 		loadOptsRev.appendChild(mapItRev);
+		mapItRev.appendChild(iconMapItRev);
 		var submit2Rev = document.getElementById("mapItRev");
 		submit2Rev.addEventListener("click",mapAllRev);
 		 };

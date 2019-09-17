@@ -81,7 +81,6 @@ function readBlob() {
 	    					L.mapquest.geocoding().geocode(inputToMap);
 	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback)
 	    					function geocodingCallback(error, result) {
-	    						console.log(result)
 	    						latitude.textContent = result.results[0].locations[0].displayLatLng.lat
 	    						longitude.textContent = result.results[0].locations[0].displayLatLng.lng;
 	    						}
@@ -89,7 +88,6 @@ function readBlob() {
 	    					L.mapquest.geocoding().geocode(inputToMap);
 	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback);
 	    					function geocodingCallback(error, result) {
-	    						console.log(result)
 	    						evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[0].displayLatLng.lat
 	    						evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[0].displayLatLng.lng;
 	    						};
@@ -164,9 +162,13 @@ function readBlob() {
 		var loadOpts = document.getElementById("loadOptions");
 		if (loadOpts.childNodes.length == 7) {
 		  var mapIt = document.createElement("button");
-		  mapIt.textContent = "Map'em All";
+		  var iconMapIt = document.createElement("i")
+		  iconMapIt.classList.add("fas");
+	      iconMapIt.classList.add("fa-map-marker-alt");
+	      mapIt.textContent = "Map All ";
 		  mapIt.setAttribute("id","mapIt");
 		  loadOpts.appendChild(mapIt);
+		  mapIt.appendChild(iconMapIt);
 		  var submit2 = document.getElementById("mapIt");
 		  submit2.addEventListener("click",mapAll);
 		  };

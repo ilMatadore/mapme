@@ -70,14 +70,14 @@ center: [32.777977,-96.796215],
 	zoom: 12
 });
 
-L.control.layers({
+/*L.control.layers({
   'Map': baseLayer,
   'Hybrid': L.mapquest.tileLayer('hybrid'),
   'Satellite': L.mapquest.tileLayer('satellite'),
   'Light': L.mapquest.tileLayer('light'),
   'Dark': L.mapquest.tileLayer('dark')
 }).addTo(map);
-
+*/
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -102,4 +102,15 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
+
+var resetMap = document.getElementById("resetMap");
+
+resetMap.onclick = function() {
+	map.remove();
+	 L.mapquest.map('map', {
+		center: [32.777977,-96.796215],
+		layers: L.mapquest.tileLayer('map'),
+		zoom: 12
+		});
 }
