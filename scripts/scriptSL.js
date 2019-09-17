@@ -25,13 +25,13 @@ function mapSingle() {
 	    map = L.mapquest.map('map', {
 	        center: latLng,
 	        layers: L.mapquest.tileLayer('map'),
-	        zoom: 10
+	        zoom: 12
 	    });
 		var customIcon = L.mapquest.icons.marker({
-	        primaryColor: '#FF9531'
+	        primaryColor: '#000000'
 	    });
 
-		L.marker(latLng, { icon: customIcon }).addTo(map);
+		L.marker(latLng, { icon: customIcon}).addTo(map);
 	    };
 
 	var ul = document.getElementById("list");

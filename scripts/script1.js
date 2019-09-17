@@ -70,14 +70,6 @@ center: [32.777977,-96.796215],
 	zoom: 12
 });
 
-/*L.control.layers({
-  'Map': baseLayer,
-  'Hybrid': L.mapquest.tileLayer('hybrid'),
-  'Satellite': L.mapquest.tileLayer('satellite'),
-  'Light': L.mapquest.tileLayer('light'),
-  'Dark': L.mapquest.tileLayer('dark')
-}).addTo(map);
-*/
 // Get the modal
 var modal = document.getElementById("myModal");
 
