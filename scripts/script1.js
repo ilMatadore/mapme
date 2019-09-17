@@ -61,7 +61,7 @@ singleLoc.click()
 
 //Loads initial map
 
-L.mapquest.key = 'fGlgbVLtBs7z2qOPTVrlcBg5qqpqQ5J3';
+L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
 var baseLayer = L.mapquest.tileLayer('map');
 
 var map = L.mapquest.map('map', {

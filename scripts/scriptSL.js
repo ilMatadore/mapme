@@ -14,7 +14,6 @@ function mapSingle() {
           postalCode: postal.value,
           country: country.value
 	};
-	console.log(singleLocation)
 
 	map.remove()
 
@@ -28,7 +27,6 @@ function mapSingle() {
 	        layers: L.mapquest.tileLayer('map'),
 	        zoom: 10
 	    });
-	    console.log(map)
 		var customIcon = L.mapquest.icons.marker({
 	        primaryColor: '#FF9531'
 	    });
@@ -69,7 +67,6 @@ function mapSingle() {
 	L.mapquest.geocoding().geocode(singleLocation, geoCodingCallback);
 
 	function geoCodingCallback(error, response) {
-		console.log(response)
 		  document.getElementById("inpLat").textContent = response.results[0].locations[0].displayLatLng.lat;
 		  document.getElementById("inpLng").textContent = response.results[0].locations[0].displayLatLng.lng;
 		};

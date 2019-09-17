@@ -222,7 +222,8 @@ function loadDataFileRev() {
     L.mapquest.geocoding().reverse(arrayLocationsRev, geocodingCallback);
 
     function geocodingCallback(error, result) {
-    	console.log(result.results)
+    	
+	console.log(result.results)
     	console.log(response)
     	console.log(err)
     };
