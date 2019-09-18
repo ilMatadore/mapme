@@ -62,13 +62,12 @@ singleLoc.click()
 //Loads initial map
 
 L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
-var baseLayer = L.mapquest.tileLayer('map');
 
-var map = L.mapquest.map('map', {
-center: [32.777977,-96.796215],
-	layers: L.mapquest.tileLayer('map'),
-	zoom: 12
-});
+	var map = L.mapquest.map('map', {
+	center: [32.777977,-96.796215],
+		layers: L.mapquest.tileLayer('map'),
+		zoom: 12
+	});
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -99,10 +98,5 @@ window.onclick = function(event) {
 var resetMap = document.getElementById("resetMap");
 
 resetMap.onclick = function() {
-	map.remove();
-	 L.mapquest.map('map', {
-		center: [32.777977,-96.796215],
-		layers: L.mapquest.tileLayer('map'),
-		zoom: 12
-		});
+	console.log("resetmap")
 }
