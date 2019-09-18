@@ -61,7 +61,8 @@ singleLoc.click()
 
 //Loads initial map
 
-L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
+//L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
+L.mapquest.key = 'fGlgbVLtBs7z2qOPTVrlcBg5qqpqQ5J3';
 
 	var map = L.mapquest.map('map', {
 	center: [32.777977,-96.796215],
@@ -98,5 +99,17 @@ window.onclick = function(event) {
 var resetMap = document.getElementById("resetMap");
 
 resetMap.onclick = function() {
-	console.log("resetmap")
+	map.remove()
+
+	L.mapquest.geocoding().geocode('Dallas,TX',createMap);
+
+	function createMap(error, response) {
+	    var location = response.results[0].locations[0];
+	    var latLng = location.displayLatLng;
+	    map = L.mapquest.map('map', {
+	        center: latLng,
+	        layers: L.mapquest.tileLayer('map'),
+	        zoom: 12
+	    });
+	    };
 }
