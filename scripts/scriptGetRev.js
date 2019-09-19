@@ -153,6 +153,28 @@ function readBlobRev() {
 	    	};	        
 		};
 
+			//setting input fields size and max length in ML table
+	    var nameLengthRev = [], latLengthRev = [], longLengthRev = [];
+	    for (var a = 1; a <= tbodyRev.childElementCount; a++) {
+	    	nameLengthRev.push(document.getElementById("input1"+"rowRev"+a));
+	    	latLengthRev.push(document.getElementById("input2"+"rowRev"+a));
+	    	longLengthRev.push(document.getElementById("input3"+"rowRev"+a));
+	    	for (var b=0; b<nameLengthRev.length; b++) {
+	    		nameLengthRev[b].size = "28";
+	    		nameLengthRev[b].maxLength = "100";	    		
+	    	}
+	    	for (var b=0; b<latLengthRev.length; b++) {
+	    		latLengthRev[b].size = "10";
+	    		latLengthRev[b].maxLength = "15";	    		
+	    	}
+	    	for (var b=0; b<longLengthRev.length; b++) {
+	    		longLengthRev[b].size = "10";
+	    		longLengthRev[b].maxLength = "15";	    		
+	    	}	
+	    };
+
+
+
 		function mapAllRev() {
 			for (var l = 1; l <= tbodyRev.childElementCount; l++) {
 			document.getElementById("mapaRev"+l).click();

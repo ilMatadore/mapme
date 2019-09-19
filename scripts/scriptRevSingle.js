@@ -58,7 +58,7 @@ function reverseSingle() {
             gotAddLi.appendChild(gotAddLabel);
             gotAddLi.appendChild(gotAddP);
             gotAddLi.appendChild(gotAddSpan);
-            getAddress.insertBefore( gotAddLi,getAddress.childNodes[getAddress.childNodes.length-2]);
+            getAddress.insertBefore(gotAddLi,getAddress.childNodes[getAddress.childNodes.length-2]);
             gotAddP.textContent = respValue;
             gotAddLabel.textContent = respType
             gotAddSpan.textContent = respType + " returned";
