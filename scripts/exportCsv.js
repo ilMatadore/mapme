@@ -25,12 +25,19 @@ function downloadCSV(csv, filename) {
 }
 
 function exportTableToCSV(filename,clicked_id) {
-    
     var csv = [];
     if (clicked_id == "export") {
         var rows = document.getElementById("table");
+        if (tbody.childNodes.length == 0) {
+        alert("Please load data first");
+        return;
+        };
     } else {    
         var rows = document.getElementById("tableRev");
+        if (tbodyRev.childNodes.length == 0) {
+        alert("Please load data first");
+        return;
+        };
     }
     var rows2= rows.querySelectorAll("tr");
     var rows3= rows.querySelectorAll("input");

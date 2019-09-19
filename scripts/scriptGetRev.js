@@ -194,5 +194,3 @@ function readBlobRev() {
 	}
 	}, false);
 
-var LoadRev = document.getElementById("submitRev");
-LoadRev.addEventListener("click",loadDataFileRev);
