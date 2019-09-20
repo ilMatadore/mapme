@@ -16,7 +16,7 @@ footer a {
 #header {
 	width: 35%;
 	font-size: 70px;
-	margin-left: 10px;
+	margin-left: 5px;
 	font-family: 'Lobster', cursive;
 	margin: 20px 0 20px 10px;
 	display: flex;
@@ -26,13 +26,13 @@ footer a {
 }
 #map {
 	width: 35%;
-	height: 82vh;
-	margin-left: 10px;
+	height: 83vh;
+	margin-left: 5px;
 	z-index: 0;
 }
 #sub-container {
-	width: 80%;
-	background-image:;
+	width: 65%;
+	background-image:
 	background-position: center bottom;
   	background-repeat: no-repeat;
 }
@@ -192,7 +192,7 @@ table.blueTable tfoot .links a{
 	width: 600px;	
 }
 .form-style-7 li{
-	display: block;
+	list-style: none;
 	padding: 9px;
 	border:1px solid #DDDDDD;
 	margin-bottom: 25px;
@@ -276,7 +276,7 @@ table.blueTable tfoot .links a{
 	padding: 5px;
 }
 
-#submitSingle, #getIt{
+#submitSingle, #getIt, #copyForm, #copyFormRev {
 	font-size: 20px;
 	padding: 10px;
 	border: none;
@@ -284,9 +284,14 @@ table.blueTable tfoot .links a{
 	cursor: pointer;
 	font-family: Ubuntu;
 	transition: 0.5s;
-	
+	margin: 0px auto;	
 }
-#submitSingle:hover, #submit:hover, #getIt:hover, #export:hover, #mapIt:hover, #submitRev:hover, #exportRev:hover, #mapItRev:hover {
+
+.formButtons {
+	display: flex;
+}
+
+#submitSingle:hover, #submit:hover, #getIt:hover, #export:hover, #mapIt:hover, #submitRev:hover, #exportRev:hover, #mapItRev:hover, #copyForm:hover, #copyFormRev:hover {
 	background-color: orange;
 }
 

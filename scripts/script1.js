@@ -112,4 +112,32 @@ resetMap.onclick = function() {
 	        zoom: 12
 	    });
 	    };
+	if(list.childNodes.length > 13) {
+		address.value = '';
+	    city.value = '';
+	    state.value = '';
+	    postal.value = '';
+	    country.value = '';
+	    inpLat.textContent = ' ';
+  		inpLng.textContent = ' ';
+  	} else {
+ 		address.value = '';
+	    city.value = '';
+	    state.value = '';
+	    postal.value = '';
+	    country.value = ''; 		
+  	};
+
+ 	if(getAddress.childNodes.length > 7) {
+ 		getLat.value = '';
+    	getLng.value = '';
+	    getAddress.children[2].children[1].textContent = '';
+	    getAddress.children[3].children[1].textContent = '';
+	    getAddress.children[4].children[1].textContent = '';
+	    getAddress.children[5].children[1].textContent = '';
+	    getAddress.children[6].children[1].textContent = '';
+ 	} else {
+ 		getLat.value = '';
+    	getLng.value = '';		
+ 	};
 }

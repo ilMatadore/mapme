@@ -19,7 +19,7 @@
 							<button id="multipleLoc">Multiple Addresses</button>
 							<button id="reverseGeoLoc">Single Lat/Long</button>
 							<button id="multipleReverse">Multiple Lat/Long</button>
-							<button id="resetMap"><i class='fas fa-eraser'></i></button>
+							<button id="resetMap"><i class='fas fa-trash-alt'></i></button>
 							<button id="help"><i class='fas fa-question-circle'></i></button>
 				</div>
 
@@ -301,12 +301,12 @@
 							</select>
 						    <span>Select Country</span>
 						</li>
-						<li>
-						    <button id="submitSingle" >Map It <i class="fas fa-map-marker-alt"></i></button>
+						<li class="formButtons">
+							<button id="submitSingle">Map It <i class="fas fa-map-marker-alt"></i></button>	    
 						</li>
 					</ul>
 				</div>
-				<div id="multipleLocationsTab" style="display: none; margin-left: 20px;">
+				<div id="multipleLocationsTab" style="display: none; margin-left: 10px;">
 					<div id="loadOptions">
 						<input type="file" id="files"/>
 		 				<button id='submit'>Load <i class="fas fa-file-import"></i></button>
@@ -318,7 +318,7 @@
 								<tr id="trHead">
 									<th style="width:20%">Name</th>
 									<th style="width:30%">Address</th>
-									<th style="width:15%">City</th>
+									<th style="width:12%">City</th>
 									<th style="width:5%">State</th>
 									<th style="width:7.5%">Postal</th>
 									<th style="width:5%">Country</th>
@@ -343,11 +343,11 @@
 						<input id="getLng" type="text">
 						<span>Enter longitude in decimal format</span>
 					</li>
-					<li>
-						<button id="getIt">Get Address <i class="fas fa-map-marker-alt"></i></button>
+					<li class="formButtons">
+						<button id="getIt">Get Address <i class="fas fa-map-marker-alt"></i></button>					
 					</li>
 				</div>
-				<div id="multiRevTab" style="display: none; margin-left: 20px;">
+				<div id="multiRevTab" style="display: none; margin-left: 10px;">
 					<div id="loadOptionsRev">
 							<input type="file" id="filesRev"/>
 		 					<button id='submitRev'>Load <i class="fas fa-file-import"></i></button>
@@ -359,10 +359,10 @@
 								<tr id="trHeadRev">
 									<th style="width:20%">Name</th>
 									<th style="width:10%">Latitude</th>
-									<th style="width:10%">Longitude</th>
+									<th style="width:12%">Longitude</th>
 									<th style="width:2%"></th>
-									<th style="width:25%">Address</th>
-									<th style="width:15%">City</th>
+									<th style="width:20%">Address</th>
+									<th style="width:10%">City</th>
 									<th style="width:5%">State</th>
 									<th style="width:8%">Postal</th>
 									<th style="width:5%">Country</th>
@@ -427,7 +427,7 @@
 			  	<p>Each loaded cell can be manually updated in the table and re-mapped by clicking the <i class="fas fa-map-marker-alt" style="color: orange;"></i> again, a new latitude and longitude will be returned.</p>
 			  	<p>Data can be exported as a csv file by clicking the 'Export data' button.</p>
 			  	<br>
-			  	<p>Click on <i class='fas fa-eraser'></i> at any time to remove all pins from the map.</p>
+			  	<p>Click on <i class='fas fa-trash-alt'></i> at any time to remove all pins from the map and clear <strong>Single Address</strong> and <strong>Single Lat/Long</strong> forms.</p>
 		    </div>
 		    <div class="modal-footer">
 		      <h3> </h3>

@@ -1,4 +1,5 @@
 //Multiple locations
+
 // reads file
 function readBlob() {
 	var files = document.getElementById('files').files;

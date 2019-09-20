@@ -15,6 +15,10 @@ function mapSingle() {
           country: country.value
 	};
 
+	if (address.value == '' && city.value  == '' && state.value == '' && postal.value == '' && country.value == '') {
+		alert("Please enter location's information");
+		return;
+	} else {
 	map.remove()
 
 	L.mapquest.geocoding().geocode(singleLocation, createMap);
@@ -69,10 +73,10 @@ function mapSingle() {
 	function geoCodingCallback(error, response) {
 		  document.getElementById("inpLat").textContent = response.results[0].locations[0].displayLatLng.lat;
 		  document.getElementById("inpLng").textContent = response.results[0].locations[0].displayLatLng.lng;
+		  console.log(error)
 		};
+ 	};
 };
 
 var submitSingle = document.getElementById("submitSingle");
 submitSingle.addEventListener("click",mapSingle);
-
-	
