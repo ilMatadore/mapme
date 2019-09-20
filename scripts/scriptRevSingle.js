@@ -7,6 +7,11 @@ function reverseSingle() {
 
 	var local = [getLat.value, getLng.value];
 
+    if (getLat.value == '' && getLng.value  == '') {
+        alert("Please enter location's latitude and longitude");
+        return;
+    } else {
+
 	map.remove()
 
 	L.mapquest.geocoding().reverse(local, createMap);
@@ -40,9 +45,9 @@ function reverseSingle() {
 	    });
 
 		L.marker(latLng, { icon: customIcon });
-
-	};
-
+        };
+    };
+        
 	L.mapquest.geocoding().reverse(local, geocodingCallback);
 
     function geocodingCallback(error, result) {

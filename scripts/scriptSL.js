@@ -73,7 +73,6 @@ function mapSingle() {
 	function geoCodingCallback(error, response) {
 		  document.getElementById("inpLat").textContent = response.results[0].locations[0].displayLatLng.lat;
 		  document.getElementById("inpLng").textContent = response.results[0].locations[0].displayLatLng.lng;
-		  console.log(error)
 		};
  	};
 };
