@@ -4,9 +4,9 @@ body {
 
 header {
 	top: 0px;
-	background-image: url('header.png');
+	background-image: url('buildings.png');
 	height: 150px;
-	margin-bottom: 25px;
+	margin: 10px 10px 25px 10px;
 }
 
 footer {
@@ -22,7 +22,7 @@ footer a {
 }
 
 #header {
-	font-size: 70px;
+	font-size: 80px;
 	margin: 0 auto;
 	font-family: 'Lobster', cursive;
 	text-align: center;
@@ -31,6 +31,12 @@ footer a {
 h1 {
 	margin: 0px;
 	padding: 30px 0px;
+	text-shadow:
+       3px 3px 0 white,
+     -1px -1px 0 white,  
+      1px -1px 0 white,
+      -1px 1px 0 white,
+       1px 1px 0 white;
 }
 
 #container {
@@ -39,7 +45,7 @@ h1 {
 #map {
 	width: 30%;
 	height: 78vh;
-	margin-left: 15px;
+	margin-left: 10px;
 	
 	z-index: 0;
 }
@@ -290,16 +296,18 @@ table.blueTable tfoot .links a{
 	padding: 5px;
 }
 
-#submitSingle, #getIt, #copyForm, #copyFormRev {
+#submitSingle, #getIt {
 	font-size: 20px;
 	padding: 10px;
-	border: none;
+	border-color: #BFD8C3;
 	outline: none;
 	cursor: pointer;
 	font-family: Ubuntu;
 	transition: 0.5s;
-	margin: 0px auto;	
-}
+	margin: 0px auto;
+	background-color: #FFE2D4;
+	border-radius: 5px;
+	}
 
 .formButtons {
 	display: flex;
@@ -309,19 +317,24 @@ table.blueTable tfoot .links a{
 	background-color: orange;
 }
 
-#files, #submit, #export, #mapIt, #submitRev, #exportRev, #mapItRev {
+#submit, #export, #mapIt, #submitRev, #exportRev, #mapItRev {
 	font-family: Ubuntu;
 	transition: 0.5s;
 	outline: none;
 	cursor: pointer;
 	border-radius: 5px;
+	background-color: #FFE2D4;
 }
 
 input {
 	background-color: transparent;
 	border: none;
 	font-family: 'Ubuntu', sans-serif;
-	cursor: pointer;
+	cursor: text;
+}
+
+input:hover {
+	background-color: #F9F9F9;
 }
 
 #resetMap {
