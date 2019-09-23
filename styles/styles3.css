@@ -3,7 +3,7 @@
         background-color: lightblue;
     }
     #container {
-	display: inline;
+	display: block;
 	}
     #map {
 	width: 80%;
