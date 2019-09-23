@@ -6,13 +6,16 @@
 @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
     #container {
 	display: block;
+	width: 90%;
+	padding-top: 20px;
 	}
 }
 @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
     #map {
 	width: 80%;
 	height: 20vh;
-	margin-left: 10px;
+	margin: auto;
+	   
 	}
 }
 
