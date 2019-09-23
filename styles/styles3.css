@@ -1,6 +1,6 @@
-@media only screen (min-device-width : 640px){
+@media only screen (max-device-width : 640px){
     #container {
-	display: flex;
+	display: inline;
 	}
 }
 
@@ -47,7 +47,7 @@ h1 {
 }
 
 #container {
-	display: block;
+	display: flex;
 }
 #map {
 	width: 30%;
