@@ -2,6 +2,9 @@
     body, div {
         background-color: lightblue;
     }
+    #container {
+	display: inline;
+	}
     #map {
 	width: 80%;
 	height: 20vh;
