@@ -125,11 +125,11 @@ function readBlob() {
 	    	postalLength.push(document.getElementById("input5"+"row"+a));
 	    	countryLength.push(document.getElementById("input6"+"row"+a));
 	    	for (var b=0; b<nameLength.length; b++) {
-	    		nameLength[b].size = "18";
+	    		nameLength[b].size = "28";
 	    		nameLength[b].maxLength = "100";	    		
 	    	}
 	    	for (var b=0; b<addressLength.length; b++) {
-	    		addressLength[b].size = "20";
+	    		addressLength[b].size = "28";
 	    		addressLength[b].maxLength = "50";	    		
 	    	}
 	    	for (var b=0; b<cityLength.length; b++) {
