@@ -19,13 +19,6 @@
 	}
 }
 
-@media only screen (max-device-width : 640px){
-    #container {
-	display: inline;
-	}
-}
-
-
 body {
 	font-family: 'Ubuntu', sans-serif;
 }
