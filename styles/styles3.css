@@ -1,3 +1,24 @@
+@media only screen and (max-device-width: 640px){
+    #container {
+		flex-direction: column;
+	}
+
+	#map {
+		height: 25vh;
+		width: 80%;
+		margin: 0px auto;
+	}
+
+	#sub-container {
+		margin: auto;
+		padding-top: 30px;
+	}
+
+	header {
+		height: 200px;
+	}
+}
+
 body {
 	font-family: 'Ubuntu', sans-serif;
 }
@@ -46,14 +67,10 @@ h1 {
 	width: 30%;
 	height: 78vh;
 	margin-left: 10px;
-	
-	z-index: 0;
 }
+
 #sub-container {
 	width: 70%;
-	background-image:
-	background-position: center bottom;
-  	background-repeat: no-repeat;
 }
 
 #tabs {
