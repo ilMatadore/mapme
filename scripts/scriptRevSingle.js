@@ -32,11 +32,11 @@ function reverseSingle() {
     		getLat.value = Math.round(position.lat * Math.pow(10, 6)) / Math.pow(10, 6);   
     		getLng.value = Math.round(position.lng * Math.pow(10, 6)) / Math.pow(10, 6); 
     		var resetValues = getLat.parentElement.parentElement.childNodes;
+    		resetValues[4].childNodes[1].textContent = "";
     		resetValues[5].childNodes[1].textContent = "";
     		resetValues[6].childNodes[1].textContent = "";
     		resetValues[7].childNodes[1].textContent = "";
     		resetValues[8].childNodes[1].textContent = "";
-    		resetValues[9].childNodes[1].textContent = "";
 
  		});
 
@@ -55,7 +55,7 @@ function reverseSingle() {
       var got = result.results[0].locations[0];
 
       function createLi(resp,respValue,respType) {
-        if (getAddress.childNodes.length <= 11) {
+        if (getAddress.childNodes.length < 11) {
             var gotAddLi = document.createElement("li");
             var gotAddLabel = document.createElement("label");
             var gotAddP = document.createElement("p");
