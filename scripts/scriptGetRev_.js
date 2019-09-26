@@ -27,18 +27,20 @@ function readBlobRev() {
 	        layers: L.mapquest.tileLayer('map'),
 	        zoom: 12
 	    });
-		//var customIcon = L.mapquest.icons.marker({
-	    //    primaryColor: '#FF9531'
-	   // });
+		/*
+		var customIcon = L.mapquest.icons.marker({
+	        primaryColor: '#FF9531'
+	    });
 
-		//L.marker(latLng, { icon: customIcon }).addTo(map);
+		L.marker(latLng, { icon: customIcon }).addTo(map);
+		*/
 	    };
 
 	var readerRev = new FileReader();
 
-	// generates table based on file data
+	/* generates table based on file data */
 	readerRev.onloadend = function(evt) {
-	  if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+	  if (evt.target.readyState == FileReader.DONE) {
 	    var refPtsRev = evt.target.result.split("\n");
 	    var revToMap= [];
 	    for (var i = 0; i < refPtsRev.length; i++) {
@@ -73,7 +75,7 @@ function readBlobRev() {
 	    					var countryRev = document.createElement("td");
 	    					evt.target.parentElement.parentElement.appendChild(countryRev);
 	    					
-	    					//var reverseMap = revToMap[evt.target.id.split('')[evt.target.id.split('').length-1]-1];
+	    					/*var reverseMap = revToMap[evt.target.id.split('')[evt.target.id.split('').length-1]-1]; */
 
 	    					L.mapquest.geocoding().reverse(inputToMapRev);
 	       					L.mapquest.geocoding().reverse(inputToMapRev, geocodingCallback);
@@ -153,7 +155,7 @@ function readBlobRev() {
 	    	};	        
 		};
 
-			//setting input fields size and max length in ML table
+			/*setting input fields size and max length in ML table*/
 	    var nameLengthRev = [], latLengthRev = [], longLengthRev = [];
 	    for (var a = 1; a <= tbodyRev.childElementCount; a++) {
 	    	nameLengthRev.push(document.getElementById("input1"+"rowRev"+a));

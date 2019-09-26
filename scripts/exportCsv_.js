@@ -2,25 +2,25 @@ function downloadCSV(csv, filename) {
     var csvFile;
     var downloadLink;
     var csv = "\ufeff"+csv;
-    // CSV file
+    /* CSV file */
     csvFile = new Blob([csv], {type: "text/csv; charset=utf-18"});
 
-    // Download link
+    /* Download link */
     downloadLink = document.createElement("a");
 
-    // File name
+    /* File name */
     downloadLink.download = filename;
 
-    // Create a link to the file
+    /* Create a link to the file */
     downloadLink.href = window.URL.createObjectURL(csvFile);
 
-    // Hide download link
+    /* Hide download link */
     downloadLink.style.display = "none";
 
-    // Add the link to DOM
+    /* Add the link to DOM */
     document.body.appendChild(downloadLink);
 
-    // Click download link
+    /* Click download link */
     downloadLink.click();
 }
 
@@ -67,7 +67,7 @@ function exportTableToCSV(filename,clicked_id) {
         csv.push(row.join(","));        
     }
 
-    // Download CSV file
+    /* Download CSV file */
    downloadCSV(csv.join("\n"), filename);
 }
 

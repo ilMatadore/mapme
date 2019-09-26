@@ -1,4 +1,4 @@
-// single location
+/* single location */
 function mapSingle() {
 
 	var address = document.getElementById("address");

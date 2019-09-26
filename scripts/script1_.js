@@ -1,4 +1,4 @@
-//hides/shows multiple/ single tabs
+/*hides/shows multiple/ single tabs*/
 var singleLocationTab = document.getElementById("form");
 var multipleLocationsTab = document.getElementById("multipleLocationsTab");
 var getAddress = document.getElementById("getAddress");
@@ -56,13 +56,13 @@ function hideSingleMultiReverse() {
 	reverseGeoLoc.className = "";
 }
 
-//default
+/*default*/
 singleLoc.click()
 
-//Loads initial map
+/*Loads initial map*/
 
 L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
-//L.mapquest.key = 'fGlgbVLtBs7z2qOPTVrlcBg5qqpqQ5J3';
+/*L.mapquest.key = 'fGlgbVLtBs7z2qOPTVrlcBg5qqpqQ5J3';*/
 
 	var map = L.mapquest.map('map', {
 	center: [32.777977,-96.796215],
@@ -70,26 +70,26 @@ L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
 		zoom: 12
 	});
 
-// Get the modal
+/* Get the modal*/
 var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
+/* Get the button that opens the modal */
 var btn = document.getElementById("help");
 
-// Get the <span> element that closes the modal
+/* Get the <span> element that closes the modal */
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+/* When the user clicks the button, open the modal */
 btn.onclick = function() {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+/* When the user clicks on <span> (x), close the modal */
 span.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+/* When the user clicks anywhere outside of the modal, close it */
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";

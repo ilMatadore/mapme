@@ -1,4 +1,4 @@
-// reverse Single
+/* reverse Single */
 function reverseSingle() {
 
 	var getLat = document.getElementById("getLat");

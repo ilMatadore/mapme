@@ -1,6 +1,6 @@
-//Multiple locations
+/*Multiple locations
 
-// reads file
+ reads file */
 function readBlob() {
 	var files = document.getElementById('files').files;
 
@@ -42,9 +42,9 @@ function readBlob() {
 
 	var reader = new FileReader();
 
-	// generates table based on file data
+	/* generates table based on file data */
 	reader.onloadend = function(evt) {
-	  if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+	  if (evt.target.readyState == FileReader.DONE) {
 	    var refPts = evt.target.result.split("\n");
 	    for (var i = 0; i < refPts.length; i++) {
 	    	if (refPts[i].length > 0) {
@@ -54,7 +54,7 @@ function readBlob() {
 	    			row.setAttribute("id","row"+(i+1));
 	    			var cellgoMap = document.createElement("td"); 
 	    			cellgoMap.textContent = ""; 					
-//creates map icon button
+/*creates map icon button */
 	    			var goMap = document.createElement("button");
 	     			goMap.classList.add("fas");
 	    			goMap.classList.add("fa-map-marker-alt");
@@ -63,7 +63,7 @@ function readBlob() {
 	    			table.appendChild(row);	   		
 
 	    			goMap.onclick = mapeame;
-//map each location function
+/* map each location function */
 	    			function mapeame(evt) {
 	    				var latitude;
 	    				var longitude;
@@ -85,7 +85,7 @@ function readBlob() {
 	    						latitude.textContent = result.results[0].locations[0].displayLatLng.lat
 	    						longitude.textContent = result.results[0].locations[0].displayLatLng.lng;
 	    						/*
-	    						//color marker
+	    						color marker
 	    						var customIcon = L.mapquest.icons.marker({
 	        						primaryColor: '#ffa500'
 	    						});
@@ -99,7 +99,7 @@ function readBlob() {
 	    						evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[0].displayLatLng.lat
 	    						evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[0].displayLatLng.lng;
 	    						/*
-	    						//color marker
+	    						color marker
 	    						var customIcon = L.mapquest.icons.marker({
 	        						primaryColor: '#ffa500'
 	    						});
@@ -129,7 +129,7 @@ function readBlob() {
 
 
 	};
-	//setting input fields size and max length in ML table
+	/*setting input fields size and max length in ML table */
 	    var nameLength = [], addressLength = [], cityLength = [], stateLength = [], postalLength = [], countryLength = [];
 	    for (var a = 1; a <= tbody.childElementCount; a++) {
 	    	nameLength.push(document.getElementById("input1"+"row"+a));
@@ -168,7 +168,7 @@ function readBlob() {
 
 
 
-//function map all locations
+/*function map all locations*/
 		function mapAll() {
 			for (var l = 1; l <= tbody.childElementCount; l++) {
 				document.getElementById("mapa"+l).click();
@@ -197,7 +197,7 @@ function readBlob() {
 };
 		  
 document.querySelector('#submit').addEventListener('click', function(evt) {
-//removes rows when loading a new file
+/*removes rows when loading a new file*/
 	var tbod = document.getElementById("tbody")
 	if (tbod.childNodes.length > 0) {
 			while (tbod.firstChild) {
