@@ -32,7 +32,7 @@ function mapSingle() {
 	        zoom: 12
 	    });
 		var customIcon = L.mapquest.icons.marker({
-	        primaryColor: '#000000'
+	        primaryColor: '#ffa500'
 	    });
 
 		L.marker(latLng, { icon: customIcon}).addTo(map);

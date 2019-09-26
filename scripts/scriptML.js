@@ -31,11 +31,11 @@ function readBlob() {
 	        zoom: 12
 	    });
 
-		//var customIcon = L.mapquest.icons.marker({
-	    //    primaryColor: '#FF9531'
-	   // });
+		var customIcon = L.mapquest.icons.marker({
+	       primaryColor: '#ffa500'
+	    });
 
-		//L.marker(latLng, { icon: customIcon }).addTo(map);
+		L.marker(latLng, { icon: customIcon }).addTo(map);
 	    };
 
 
@@ -84,6 +84,13 @@ function readBlob() {
 	    					function geocodingCallback(error, result) {
 	    						latitude.textContent = result.results[0].locations[0].displayLatLng.lat
 	    						longitude.textContent = result.results[0].locations[0].displayLatLng.lng;
+	    						/*
+	    						//color marker
+	    						var customIcon = L.mapquest.icons.marker({
+	        						primaryColor: '#ffa500'
+	    						});
+	    						L.marker([latitude.textContent, longitude.textContent] , { icon: customIcon }).addTo(map);
+	    						*/
 	    						}
 	    				} else {
 	    					L.mapquest.geocoding().geocode(inputToMap);
@@ -91,6 +98,13 @@ function readBlob() {
 	    					function geocodingCallback(error, result) {
 	    						evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[0].displayLatLng.lat
 	    						evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[0].displayLatLng.lng;
+	    						/*
+	    						//color marker
+	    						var customIcon = L.mapquest.icons.marker({
+	        						primaryColor: '#ffa500'
+	    						});
+	    						L.marker([evt.target.parentElement.parentElement.childNodes[7].textContent, evt.target.parentElement.parentElement.childNodes[8].textContent] , { icon: customIcon }).addTo(map);
+	    						*/
 	    						};
 	    			
 	    				};

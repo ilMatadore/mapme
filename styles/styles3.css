@@ -53,10 +53,11 @@ h1 {
 #map {
 	flex: 0.3;
 	height: 68vh;
-	border: 5px solid gainsboro;
+	
 	border-radius: 20px;
 	z-index: 0;
 	margin: 30px;
+	box-shadow: 5px 10px 18px lightgray;
 }
 
 #sub-container {
@@ -311,7 +312,7 @@ table.blueTable tfoot .links a{
 	transition: 0.5s;
 	margin: 0px auto;
 	border-radius: 5px;
-	background-color: navajowhite;
+	background-color: #ffd280;
 	}
 
 .formButtons {
@@ -329,7 +330,7 @@ table.blueTable tfoot .links a{
 	cursor: pointer;
 	border-radius: 5px;
 	padding: 5px;
-	background-color: navajowhite;
+	background-color: #ffd280;
 }
 
 input {

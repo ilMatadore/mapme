@@ -25,7 +25,11 @@ function reverseSingle() {
 	        zoom: 15
 	    });
 
-	    var popup = L.marker(latLng, {draggable: true}).addTo(map);
+        var customIcon = L.mapquest.icons.marker({
+            primaryColor: '#ffa500'
+        });
+
+	    var popup = L.marker(latLng, {draggable: true, icon: customIcon}).addTo(map);
  		popup.on('dragend', function(event) {
     		var marker = event.target;
     		var position = marker.getLatLng();
@@ -39,12 +43,6 @@ function reverseSingle() {
     		resetValues[8].childNodes[1].textContent = "";
 
  		});
-
-		var customIcon = L.mapquest.icons.marker({
-	        primaryColor: '#FF9531'
-	    });
-
-		L.marker(latLng, { icon: customIcon });
         };
     };
         
