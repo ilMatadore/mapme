@@ -160,7 +160,7 @@ function readBlobRev() {
 	    	latLengthRev.push(document.getElementById("input2"+"rowRev"+a));
 	    	longLengthRev.push(document.getElementById("input3"+"rowRev"+a));
 	    	for (var b=0; b<nameLengthRev.length; b++) {
-	    		nameLengthRev[b].size = "28";
+	    		nameLengthRev[b].size = "10";
 	    		nameLengthRev[b].maxLength = "100";	    		
 	    	}
 	    	for (var b=0; b<latLengthRev.length; b++) {

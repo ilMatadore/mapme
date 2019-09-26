@@ -61,8 +61,8 @@ singleLoc.click()
 
 //Loads initial map
 
-//L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
-L.mapquest.key = 'fGlgbVLtBs7z2qOPTVrlcBg5qqpqQ5J3';
+L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
+//L.mapquest.key = 'fGlgbVLtBs7z2qOPTVrlcBg5qqpqQ5J3';
 
 	var map = L.mapquest.map('map', {
 	center: [32.777977,-96.796215],

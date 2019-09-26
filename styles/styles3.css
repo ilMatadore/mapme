@@ -34,7 +34,7 @@ footer a {
 }
 
 #header {
-	font-size: 80px;
+	font-size: 7em;
 	margin: 0 auto;
 	font-family: 'Lobster', cursive;
 	text-align: center;
@@ -42,7 +42,6 @@ footer a {
 
 h1 {
 	margin: 0px;
-	padding: 30px 0px;
 	text-shadow:
        3px 3px 0 white,
      -1px -1px 0 white,  
