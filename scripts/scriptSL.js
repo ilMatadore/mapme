@@ -71,6 +71,7 @@ function mapSingle() {
 	L.mapquest.geocoding().geocode(singleLocation, geoCodingCallback);
 
 	function geoCodingCallback(error, response) {
+		console.log(response.results)
 		  document.getElementById("inpLat").textContent = response.results[0].locations[0].displayLatLng.lat;
 		  document.getElementById("inpLng").textContent = response.results[0].locations[0].displayLatLng.lng;
 		};

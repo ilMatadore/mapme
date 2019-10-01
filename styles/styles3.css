@@ -13,24 +13,39 @@ body {
   flex: 1 100%;
 }
 
+#test {
+	flex: 0.3;
+
+}
+
+#buttonsMap {
+	margin: 10px 30px 0px 30px;
+	height: 50px;
+	padding: 10px 20px 5px 20px;
+}
+
+#buttonsMap a {
+	text-decoration: none;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 32px;
+	color: darkblue;
+	transition: 0.3s;
+	outline: none;
+	padding-top: 5px;
+}
+
+#buttonsMap a:hover {
+	cursor: pointer;
+	color: orange;
+}
 
 header {
 	top: 0px;
 	background-image: url('header.png');
 	height: 150px;
 	margin-bottom: 15px;
-}
-
-footer {
-	height: 10px;
-	padding-right: 10px;
-	padding-top: 3px;
-}
-footer a {
-	text-decoration: none;
-	color: black;
-	font-size: 11px;
-	float: right;
 }
 
 #header {
@@ -51,12 +66,10 @@ h1 {
 }
 
 #map {
-	flex: 0.3;
 	height: 68vh;
-	
 	border-radius: 20px;
 	z-index: 0;
-	margin: 30px;
+	margin: 10px 30px 0 30px;
 	box-shadow: 5px 10px 18px lightgray;
 }
 
@@ -101,7 +114,6 @@ h1 {
 }
 
 #help {
-	float: right;
 	margin-left: 20px;
 	border: none;
 	background-color: transparent;

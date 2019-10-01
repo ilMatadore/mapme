@@ -35,7 +35,7 @@ function readBlob() {
 	       primaryColor: '#ffa500'
 	    });
 
-		L.marker(latLng, { icon: customIcon }).addTo(map);
+		L.marker(latLng, { icon: customIcon });
 	    };
 
 
@@ -71,7 +71,7 @@ function readBlob() {
 	    					street: evt.target.parentElement.parentElement.childNodes[1].childNodes[0].value,
 	    					city: evt.target.parentElement.parentElement.childNodes[2].childNodes[0].value,
 	    					state: evt.target.parentElement.parentElement.childNodes[3].childNodes[0].value,
-	    					postal: evt.target.parentElement.parentElement.childNodes[4].childNodes[0].value,
+	    					postalCode: evt.target.parentElement.parentElement.childNodes[4].childNodes[0].value,
 	    					country: evt.target.parentElement.parentElement.childNodes[5].childNodes[0].value
 	    				};
 	    				if(evt.target.parentElement.nextElementSibling == null) {
@@ -80,10 +80,13 @@ function readBlob() {
 	    					longitude = document.createElement("td");
 	    					evt.target.parentElement.parentElement.appendChild(longitude);
 	    					L.mapquest.geocoding().geocode(inputToMap);
+	    					
 	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback);
 	    					function geocodingCallback(error, result) {
-	    						latitude.textContent = result.results[0].locations[0].displayLatLng.lat;
-	    						longitude.textContent = result.results[0].locations[0].displayLatLng.lng;
+										console.log(result.results[0].locations);
+										latitude.textContent = result.results[0].locations[0].displayLatLng.lat;
+	    								longitude.textContent = result.results[0].locations[0].displayLatLng.lng;
+									}
 	    						/*
 	    						color marker
 	    						var customIcon = L.mapquest.icons.marker({
@@ -91,13 +94,22 @@ function readBlob() {
 	    						});
 	    						L.marker([latitude.textContent, longitude.textContent] , { icon: customIcon }).addTo(map);
 	    						*/
-	    						}
+	    					
 	    				} else {
 	    					L.mapquest.geocoding().geocode(inputToMap);
 	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback);
 	    					function geocodingCallback(error, result) {
+	    						for (var s = 0; s < result.results[0].locations.length; s++) {
+										console.log(result.results[0].locations[s].postalCode.includes(result.results[0].providedLocation.postal));
+										console.log(result.results[0].providedLocation.postal.includes(result.results[0].locations[s].postalCode));
+										if (result.results[0].locations[s].postalCode.includes(result.results[0].providedLocation.postal) || result.results[0].providedLocation.postal.includes(result.results[0].locations[s].postalCode)) {
+	    									evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[s].displayLatLng.lat;
+	    									evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[s].displayLatLng.lng;
+										} else {
 	    						evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[0].displayLatLng.lat;
 	    						evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[0].displayLatLng.lng;
+	    						}
+	    					}
 	    						/*
 	    						color marker
 	    						var customIcon = L.mapquest.icons.marker({
