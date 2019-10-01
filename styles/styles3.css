@@ -124,7 +124,17 @@ h1 {
 	outline: none;
 }
 
-#help:hover {
+#feedback {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 32px;
+	color: darkblue;
+	transition: 0.3s;
+	outline: none;
+}
+
+#help:hover, #feedback:hover {
 	color: darkorange;
 }
 
@@ -362,7 +372,7 @@ input:hover {
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	font-size: 32px;
+	font-size: 30px;
 	color: darkblue;
 	transition: 0.3s;
 	outline: none;
@@ -467,6 +477,14 @@ input:hover {
 }
 
 @media only screen and (max-device-width: 1000px){
+	header {
+		height: 100px;
+	}
+
+	#header {
+		font-size: 5em;
+	}
+
 	#mapButtons {
 		flex: 1 100%;
 		height: 300px;
@@ -485,4 +503,15 @@ input:hover {
 	#tabs {
 		flex-direction: column;
 	}
+	#buttonsMap a {
+		font-size: 25px;
+	}
+	#help {
+		font-size: 25px;
+	}
+	#resetMap {
+		font-size: 22px;
+		margin-top: 6px;
+	}
 }
+
