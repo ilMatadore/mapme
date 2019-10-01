@@ -467,12 +467,17 @@ input:hover {
 }
 
 @media only screen and (max-device-width: 1000px){
-	#map {
+	#test {
 		flex: 1 100%;
-		height: 250px;
-		margin: 0px auto;
-		
+		height: 300px;
+		margin: 0px auto;	
 	}
+
+	#map {
+		height: 250px;
+		flex: 1 100%;
+	}
+
 	#sub-container {
 		flex: 1 100%;
 		padding-top: 20px;
