@@ -19,9 +19,8 @@ body {
 }
 
 #buttonsMap {
-	margin: 10px 30px 0px 30px;
 	height: 50px;
-	padding: 10px 20px 5px 20px;
+	padding: 0px 20px 0px 20px;
 }
 
 #buttonsMap a {
@@ -69,7 +68,7 @@ h1 {
 	height: 68vh;
 	border-radius: 20px;
 	z-index: 0;
-	margin: 15px 30px 0 30px;
+	margin: 10px 30px 0 30px;
 	box-shadow: 5px 10px 18px lightgray;
 }
 
@@ -118,7 +117,7 @@ h1 {
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	font-size: 32px;
+	font-size: 30px;
 	color: darkblue;
 	transition: 0.3s;
 	outline: none;
@@ -128,7 +127,7 @@ h1 {
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	font-size: 32px;
+	font-size: 28px;
 	color: darkblue;
 	transition: 0.3s;
 	outline: none;
@@ -372,10 +371,11 @@ input:hover {
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	font-size: 30px;
+	font-size: 28px;
 	color: darkblue;
 	transition: 0.3s;
 	outline: none;
+	padding-top: 5px;
 }
 
 #resetMap:hover {
@@ -504,10 +504,10 @@ input:hover {
 		flex-direction: column;
 	}
 	#buttonsMap a {
-		font-size: 25px;
+		font-size: 22px;
 	}
 	#help {
-		font-size: 25px;
+		font-size: 22px;
 	}
 	#resetMap {
 		font-size: 22px;
@@ -515,3 +515,85 @@ input:hover {
 	}
 }
 
+/*ToolTips*/
+#toolReset {
+	font-family: Ubuntu;
+	font-weight: 300;
+	visibility: hidden;
+	background-color: navajowhite;
+	color: black;
+	font-size: 14px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 6px;
+	position: absolute;
+  	z-index: 1;
+  	bottom: 76%;
+  	left: 31%;
+  	margin-left: -42px;
+  	opacity: 0;
+ 	transition: opacity 0.3s;
+}
+
+.tooltiptext {
+	visibility: hidden;
+	background-color: navajowhite;
+	color: black;
+	font-size: 14px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 6px;
+	position: absolute;
+  	z-index: 1;
+  	bottom: 76%;
+  	left: 31%;
+  	margin-left: -520px;
+  	opacity: 0;
+ 	transition: opacity 0.3s;
+}
+
+#toolHelp {
+	font-family: Ubuntu;
+	font-weight: 300;
+	visibility: hidden;
+	background-color: navajowhite;
+	color: black;
+	font-size: 14px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 6px;
+	position: absolute;
+  	z-index: 1;
+  	bottom: 76%;
+  	left: 31%;
+  	margin-left: -460px;
+  	opacity: 0;
+ 	transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+#toolReset::after, .tooltiptext::after, #toolHelp::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent navajowhite transparent transparent;
+}
+
+#resetMap:hover #toolReset {
+  visibility: visible;
+  opacity: 1;
+}
+
+#help:hover #toolHelp {
+  visibility: visible;
+  opacity: 1;
+}
+
+#feedback:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

@@ -67,7 +67,7 @@ L.mapquest.key = 'kj9G6HilbYNV3OLCyOgwEgi332xADIkN';
 	var map = L.mapquest.map('map', {
 	center: [32.777977,-96.796215],
 		layers: L.mapquest.tileLayer('map'),
-		zoom: 12
+		zoom: 2
 	});
 
 /* Get the modal*/
@@ -109,7 +109,7 @@ resetMap.onclick = function() {
 	    map = L.mapquest.map('map', {
 	        center: latLng,
 	        layers: L.mapquest.tileLayer('map'),
-	        zoom: 12
+	        zoom: 2
 	    });
 	    };
 	if(list.childNodes.length > 13) {

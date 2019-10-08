@@ -14,12 +14,21 @@
 				<h1 id="header">Map It<i class="fas fa-map-marker-alt" style="color:orange; font-size: .9em;"></i></h1>
 			</header>
 			<div id="mapButtons">
-				<div id="map"></div>
 				<div id="buttonsMap">
-					<button id="resetMap"><i class='fas fa-sync-alt'></i></button>
-					<button id="feedback"><a class="fas fa-at" href="mailto:restarter.dev@gmail.com?subject=Map It Feedback"></a></button>
-					<button id="help"><i class='fas fa-question-circle'></i></button>
+					<button id="resetMap">
+						<i class='fas fa-sync-alt'></i>
+						<span id="toolReset" class="tooltiptext">Reset Map</span>
+					</button>
+					<button id="feedback">
+						<a id="mailto" class="fas fa-at" href="mailto:restarter.dev@gmail.com?subject=Map It Feedback"></a>
+						<span class="tooltiptext">Feedback</span>
+					</button>
+					<button id="help">
+						<i class='fas fa-question-circle'></i>
+						<span id="toolHelp" class="tooltiptext">Help</span>
+					</button>
 				</div>
+				<div id="map"></div>
 			</div>
 			<div id="sub-container">
 				<div id="tabs">
