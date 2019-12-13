@@ -83,7 +83,6 @@ function readBlob() {
 	    					
 	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback);
 	    					function geocodingCallback(error, result) {
-										console.log(result.results[0].locations);
 										latitude.textContent = result.results[0].locations[0].displayLatLng.lat;
 	    								longitude.textContent = result.results[0].locations[0].displayLatLng.lng;
 									}
@@ -100,8 +99,6 @@ function readBlob() {
 	    					L.mapquest.geocoding().geocode(inputToMap, geocodingCallback);
 	    					function geocodingCallback(error, result) {
 	    						for (var s = 0; s < result.results[0].locations.length; s++) {
-										console.log(result.results[0].locations[s].postalCode.includes(result.results[0].providedLocation.postal));
-										console.log(result.results[0].providedLocation.postal.includes(result.results[0].locations[s].postalCode));
 										if (result.results[0].locations[s].postalCode.includes(result.results[0].providedLocation.postal) || result.results[0].providedLocation.postal.includes(result.results[0].locations[s].postalCode)) {
 	    									evt.target.parentElement.parentElement.childNodes[7].textContent = result.results[0].locations[s].displayLatLng.lat;
 	    									evt.target.parentElement.parentElement.childNodes[8].textContent = result.results[0].locations[s].displayLatLng.lng;
